@@ -9,6 +9,7 @@ import authRoutes from "./routes/auth.routes.js";
 import contactRoutes from "./routes/contact.routes.js";
 import projectRoutes from "./routes/project.routes.js";
 import qualificationRoutes from "./routes/educationsorqualifications.routes.js";
+import path from "path";
 
 const app = express();
 app.use(express.json());
@@ -33,5 +34,9 @@ app.use((err, req, res, next) => {
     console.log(err);
   }
 });
+
+const CURRENT_WORKING_DIR = process.cwd();
+app.use(express.static(path.join(CURRENT_WORKING_DIR, "dist/app")));
+
     
 export default app;

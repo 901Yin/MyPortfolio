@@ -17,5 +17,9 @@ export default defineConfig({
         secure: false
       }
     }
+  },
+  build: {
+    outDir: '../dist/app',
+    emptyOutDir: true,
   }
 })

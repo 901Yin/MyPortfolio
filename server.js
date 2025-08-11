@@ -7,6 +7,7 @@ import contactRoutes from "./server/routes/contact.routes.js";
 import projectRoutes from "./server/routes/project.routes.js";
 import qualificationRoutes from "./server/routes/educationsorqualifications.routes.js";
 import userRoutes from "./server/routes/user.routes.js";
+import authRoutes from "./server/routes/auth.routes.js";
 
 // Database connection setup
 mongoose.Promise = global.Promise;
@@ -28,6 +29,7 @@ app.use("/", contactRoutes);
 app.use("/", projectRoutes);
 app.use("/", qualificationRoutes);
 app.use("/", userRoutes);
+app.use("/api", authRoutes);
 
 // Base route
 app.get("/", (req, res) => {
